@@ -1,0 +1,54 @@
+@model Candidate
+
+<div class="display-6">
+    Kayıt Ol
+</div>
+
+<form method="post" asp-action="Apply" asp-controller="Course">
+    <br>
+    <div class="text-danger" asp-validation-summary="All"></div>
+    <div class="form-group">
+        <br>
+        <input asp-for="Email" class="form-control" placeholder="E Mail" />
+        <br>
+        <input asp-for="FirstName" class="form-control" placeholder="İsim" />
+        <br>
+        <input asp-for="LastName" class="form-control" placeholder="Soyisim" />
+        <br>
+        <label>Yaş</label>
+        <select asp-for="Age" class="form-control">
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+        </select>
+        <br>
+        <fieldset>
+            <legend>Kayıt Olmak İstediğiniz Kursu Seçiniz</legend>
+        </fieldset>
+        <div>
+            <p>
+                <input type="radio" id="mvc" asp-for="SelectedCourse" value="ASP.Net Core MVC" checked>
+                <label>ASP.Net Core MVC</label>
+            </p>
+            <p>
+                <input type="radio" id="api" asp-for="SelectedCourse" value="ASP.Net Core API">
+                <label>ASP.Net Core API</label>
+            </p>
+            <p>
+                <input type="radio" id="blazor" asp-for="SelectedCourse" value="Blazor">
+                <label>Blazor</label>
+            </p>
+        </div>
+    </div>
+    <br>
+    <div>
+        <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+        <a href="/" class="btn btn-warning">Vazgeç</a>
+
+    </div>
+
+</form>
